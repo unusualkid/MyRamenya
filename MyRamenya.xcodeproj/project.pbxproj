@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D37204BD45E00646E11 /* AppDelegate.swift */; };
-		3C032D3A204BD45E00646E11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D39204BD45E00646E11 /* ViewController.swift */; };
+		3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D39204BD45E00646E11 /* CityViewController.swift */; };
 		3C032D3D204BD45E00646E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D3B204BD45E00646E11 /* Main.storyboard */; };
 		3C032D3F204BD45E00646E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D3E204BD45E00646E11 /* Assets.xcassets */; };
 		3C032D42204BD45E00646E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D40204BD45E00646E11 /* LaunchScreen.storyboard */; };
+		3C032D4A204BD8F500646E11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D49204BD8F500646E11 /* LoginViewController.swift */; };
+		3C3CF804204BE7A900C78DF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3CF803204BE7A900C78DF4 /* GoogleService-Info.plist */; };
+		3C3CF806204C1D8C00C78DF4 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF805204C1D8C00C78DF4 /* FavoritesTableViewController.swift */; };
+		3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */; };
+		3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF809204C1E9100C78DF4 /* Ramenya.swift */; };
+		3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF80B204C1F2000C78DF4 /* Constants.swift */; };
+		96011BEB2E7C2B97AF958AE9 /* Pods_MyRamenya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EA5CC923A022B62F0919FE2 /* Pods-MyRamenya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRamenya.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya.debug.xcconfig"; sourceTree = "<group>"; };
 		3C032D34204BD45E00646E11 /* MyRamenya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRamenya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C032D37204BD45E00646E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C032D39204BD45E00646E11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C032D39204BD45E00646E11 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		3C032D3C204BD45E00646E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C032D3E204BD45E00646E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C032D41204BD45E00646E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C032D43204BD45E00646E11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C032D49204BD8F500646E11 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3C3CF803204BE7A900C78DF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C3CF805204C1D8C00C78DF4 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
+		3C3CF809204C1E9100C78DF4 /* Ramenya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramenya.swift; sourceTree = "<group>"; };
+		3C3CF80B204C1F2000C78DF4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		571CB42B9883D4EA75B5F2DE /* Pods-MyRamenya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRamenya.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya.release.xcconfig"; sourceTree = "<group>"; };
+		FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRamenya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96011BEB2E7C2B97AF958AE9 /* Pods_MyRamenya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18C075B3BC4FD20E8E090A5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EA5CC923A022B62F0919FE2 /* Pods-MyRamenya.debug.xcconfig */,
+				571CB42B9883D4EA75B5F2DE /* Pods-MyRamenya.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3C032D2B204BD45E00646E11 = {
 			isa = PBXGroup;
 			children = (
 				3C032D36204BD45E00646E11 /* MyRamenya */,
 				3C032D35204BD45E00646E11 /* Products */,
+				18C075B3BC4FD20E8E090A5B /* Pods */,
+				42E128CFA4EC22FF9EBBA9EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +83,51 @@
 			isa = PBXGroup;
 			children = (
 				3C032D37204BD45E00646E11 /* AppDelegate.swift */,
-				3C032D39204BD45E00646E11 /* ViewController.swift */,
+				3C3CF809204C1E9100C78DF4 /* Ramenya.swift */,
+				3C3CF80B204C1F2000C78DF4 /* Constants.swift */,
+				3C032D4C204BDC1A00646E11 /* Models */,
+				3C032D4B204BDC0C00646E11 /* Controllers */,
 				3C032D3B204BD45E00646E11 /* Main.storyboard */,
 				3C032D3E204BD45E00646E11 /* Assets.xcassets */,
 				3C032D40204BD45E00646E11 /* LaunchScreen.storyboard */,
 				3C032D43204BD45E00646E11 /* Info.plist */,
+				3C3CF803204BE7A900C78DF4 /* GoogleService-Info.plist */,
 			);
 			path = MyRamenya;
+			sourceTree = "<group>";
+		};
+		3C032D4B204BDC0C00646E11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C032D39204BD45E00646E11 /* CityViewController.swift */,
+				3C032D49204BD8F500646E11 /* LoginViewController.swift */,
+				3C3CF805204C1D8C00C78DF4 /* FavoritesTableViewController.swift */,
+				3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3C032D4C204BDC1A00646E11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C032D4D204BDC4600646E11 /* Client */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C032D4D204BDC4600646E11 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		42E128CFA4EC22FF9EBBA9EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C032D46204BD45E00646E11 /* Build configuration list for PBXNativeTarget "MyRamenya" */;
 			buildPhases = (
+				9688E81485366A47B789D5EA /* [CP] Check Pods Manifest.lock */,
 				3C032D30204BD45E00646E11 /* Sources */,
 				3C032D31204BD45E00646E11 /* Frameworks */,
 				3C032D32204BD45E00646E11 /* Resources */,
+				F6CC991405A566EE4EAD6507 /* [CP] Embed Pods Frameworks */,
+				BBF81F1A2ECB45E6C797C88A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C032D42204BD45E00646E11 /* LaunchScreen.storyboard in Resources */,
+				3C3CF804204BE7A900C78DF4 /* GoogleService-Info.plist in Resources */,
 				3C032D3F204BD45E00646E11 /* Assets.xcassets in Resources */,
 				3C032D3D204BD45E00646E11 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +201,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9688E81485366A47B789D5EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyRamenya-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBF81F1A2ECB45E6C797C88A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CC991405A566EE4EAD6507 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C032D30204BD45E00646E11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C032D3A204BD45E00646E11 /* ViewController.swift in Sources */,
+				3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */,
+				3C032D4A204BD8F500646E11 /* LoginViewController.swift in Sources */,
+				3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */,
 				3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */,
+				3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */,
+				3C3CF806204C1D8C00C78DF4 /* FavoritesTableViewController.swift in Sources */,
+				3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +426,7 @@
 		};
 		3C032D47204BD45E00646E11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EA5CC923A022B62F0919FE2 /* Pods-MyRamenya.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +442,7 @@
 		};
 		3C032D48204BD45E00646E11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 571CB42B9883D4EA75B5F2DE /* Pods-MyRamenya.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
