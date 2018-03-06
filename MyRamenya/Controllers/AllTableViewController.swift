@@ -10,12 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import AlamofireImage
-
-class TableViewCell: UITableViewCell {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var ramenImage: UIImageView!
-}
+import CoreLocation
 
 class AllTableViewController: UIViewController {
     
@@ -23,13 +18,17 @@ class AllTableViewController: UIViewController {
     
     var appDelegate: AppDelegate!
     var ramenyas = [Ramenya]()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("in viewDidLoad")
         
-        let url = Constants.Host.GooglePlace
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        print("current location: \(locationManager.requestLocation())")
         
+        let url = Constants.Host.GooglePlace
         var param = [String:Any]()
         param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
         param[Constants.ParameterKeys.Location] = Constants.ParameterValues.Location
@@ -62,7 +61,10 @@ class AllTableViewController: UIViewController {
                             ramenya.rating = rating as! Double
                         }
                         
-                        let photos = d["photos"] as! [[String : Any]]
+                        var photos = [[String : Any]]()
+                        if let photoArrays = d["photos"] {
+                            photos = d["photos"] as! [[String : Any]]
+                        }
                         
                         if let photoDict = photos.first {
                             if let photoReference = photoDict["photo_reference"] {
@@ -88,6 +90,22 @@ class AllTableViewController: UIViewController {
     
     @objc func logout() {
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension AllTableViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+            Constants.ParameterValues.Location = String(location.coordinate.latitude) + "," + String(location.coordinate.longitude)
+            
+            print("Constants.ParameterValues.Location: \(Constants.ParameterValues.Location)")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
 }
 
@@ -124,21 +142,7 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
             }
 
         }
-        
-//        Alamofire.request(url, method: .get, parameters: param).responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-//            print("Success: \(response.result.isSuccess)")
-//            print("Response String: \(response.result.value)")
-////            switch response.result {
-////            case .success:
-////                print("photo download success")
-//////                cell.ramenImage.image =
-////            case .failure(let error):
-////                print("Validation Error: \(error)")
-////            }
-//        }
+
         return cell
     }
     

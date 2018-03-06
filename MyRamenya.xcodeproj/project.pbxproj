@@ -18,6 +18,7 @@
 		3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */; };
 		3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF809204C1E9100C78DF4 /* Ramenya.swift */; };
 		3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF80B204C1F2000C78DF4 /* Constants.swift */; };
+		3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */; };
 		96011BEB2E7C2B97AF958AE9 /* Pods_MyRamenya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
 		3C3CF809204C1E9100C78DF4 /* Ramenya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramenya.swift; sourceTree = "<group>"; };
 		3C3CF80B204C1F2000C78DF4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		571CB42B9883D4EA75B5F2DE /* Pods-MyRamenya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRamenya.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya.release.xcconfig"; sourceTree = "<group>"; };
 		FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRamenya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 				3C032D49204BD8F500646E11 /* LoginViewController.swift */,
 				3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */,
 				3C3CF805204C1D8C00C78DF4 /* FavoritesTableViewController.swift */,
+				3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,16 +113,8 @@
 		3C032D4C204BDC1A00646E11 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C032D4D204BDC4600646E11 /* Client */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3C032D4D204BDC4600646E11 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Client;
 			sourceTree = "<group>";
 		};
 		42E128CFA4EC22FF9EBBA9EE /* Frameworks */ = {
@@ -227,8 +222,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -290,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */,
+				3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */,
 				3C032D4A204BD8F500646E11 /* LoginViewController.swift in Sources */,
 				3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */,
 				3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */,
