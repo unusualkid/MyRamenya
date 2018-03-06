@@ -8,40 +8,20 @@
 
 import Foundation
 
-class Contacts {
-    // MARK: TMDB
-    struct TMDB {
-        static let ApiScheme = "http"
-        static let ApiHost = "api.themoviedb.org"
-        static let ApiPath = "/3"
+struct Constants {
+    
+    struct ParameterValues {
+        static let ApiKey = "AIzaSyCDjJYdmOY1XPRfJ9MBsPHkW8u4H-y-oAo"
+        static let Location = "25.0330,121.5654"
+        static let Radius = 1000
+        static let Keyword = "ramen"
+        static let ApiHost = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
     }
     
-    // MARK: TMDB Parameter Keys
-    struct TMDBParameterKeys {
-        static let ApiKey = "api_key"
-        static let RequestToken = "request_token"
-        static let SessionID = "session_id"
-        static let Username = "username"
-        static let Password = "password"
+    struct ParameterKeys {
+        static let ApiKey = "key"
+        static let Location = "location"
+        static let Radius = "radius"
+        static let Keyword = "keyword"
     }
-    
-    // MARK: TMDB Parameter Values
-    struct TMDBParameterValues {
-        static let ApiKey = "YOUR_API_KEY_HERE"
-    }
-    
-    // MARK: TMDB Response Keys
-    struct TMDBResponseKeys {
-        static let Title = "title"
-        static let ID = "id"
-        static let PosterPath = "poster_path"
-        static let StatusCode = "status_code"
-        static let StatusMessage = "status_message"
-        static let SessionID = "session_id"
-        static let RequestToken = "request_token"
-        static let Success = "success"
-        static let UserID = "id"
-        static let Results = "results"
-    }
-    
 }

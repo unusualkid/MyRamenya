@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.6.0)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -77,6 +78,7 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - Alamofire
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -85,6 +87,7 @@ DEPENDENCIES:
   - GooglePlaces
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -106,6 +109,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: eb5c262e98febef7359c2818f6ff09f573f46ce7
+PODFILE CHECKSUM: 013355f4b623b8eb8788a5bfe6b882ec6be8bf5e
 
 COCOAPODS: 1.3.1

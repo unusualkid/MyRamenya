@@ -90,12 +90,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
                     var ref = Database.database().reference().child("users")
                     ref.child(firebaseUid!).observeSingleEvent(of: .value, with: { (snapshot) in
                         var controller: UIViewController?
-                        if let value = snapshot.value as? Dictionary<String, Any> {
-                            controller = self.storyboard!.instantiateViewController(withIdentifier: "CityViewController")
-                        } else {
-                            controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
-                        }
-                        
+                        controller = self.storyboard!.instantiateViewController(withIdentifier: "TabBarController")
+
                         self.present(controller!, animated: true, completion: nil)
                     }) { (error) in
                         print(error.localizedDescription)

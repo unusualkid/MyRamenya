@@ -6,21 +6,49 @@
 //  Copyright © 2018 Ramen. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import Alamofire
 
 class FavoritesTableViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    
     var appDelegate: AppDelegate!
     var ramenyas = [Ramenya]()
+    let url = Constants.ParameterValues.ApiHost
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // get the app delegate
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        var param = [String:Any]()
+        param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
         
-        // create and set logout button
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(logout))
+        Alamofire.request(url, method: .get, parameters: param).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                if let json = response.result.value {
+                    print("json: \(json)")
+                    let result = json as! [String : Any]
+                    let dict = result["data"] as! [String : Any]
+                    var event = [String : Any]()
+                    
+                    for (key, value) in dict {
+                        event = value as! [String : Any]
+                        event["id"] = key
+//                        self.events.append(event)
+                    }
+//                    print("self.events: \(self.events)")
+//                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Validation Error: \(error)")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import GooglePlaces
+import Alamofire
 
 class CityViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    let url = Constants.ParameterValues.ApiHost
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func buttonPressed(_ sender: Any) {
+        print("buttonPressed")
+    }
 }
 
