@@ -65,14 +65,14 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="98.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIe-c3-H1C">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="49.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="57.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgy-1I-enH">
-                                                                    <rect key="frame" x="0.0" y="49.5" width="187.5" height="49"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="57.5" width="187.5" height="41"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -92,9 +92,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="addressLabel" destination="lgy-1I-enH" id="Vk3-kK-Q8L"/>
-                                            <outlet property="imageLabel" destination="EFw-D0-cpV" id="xEv-7L-cdN"/>
                                             <outlet property="nameLabel" destination="kIe-c3-H1C" id="bhA-4X-Ibv"/>
+                                            <outlet property="ramenImage" destination="EFw-D0-cpV" id="YGF-Jn-Zve"/>
+                                            <outlet property="ratingLabel" destination="lgy-1I-enH" id="LID-b6-2Ie"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

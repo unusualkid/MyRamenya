@@ -15,7 +15,7 @@ class FavoritesTableViewController: UIViewController {
     
     var appDelegate: AppDelegate!
     var ramenyas = [Ramenya]()
-    let url = Constants.ParameterValues.ApiHost
+    let url = Constants.Host.GooglePlace
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,5 +9,6 @@ target 'MyRamenya' do
   pod 'Firebase/Database'
   pod 'GooglePlaces'
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
 end

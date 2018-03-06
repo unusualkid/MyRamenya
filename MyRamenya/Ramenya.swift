@@ -13,6 +13,7 @@ struct Ramenya {
     
     var name = ""
     var id = ""
+    var rating = 1.0
     var photoReference = ""
 }
 

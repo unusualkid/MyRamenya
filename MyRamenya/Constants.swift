@@ -10,12 +10,19 @@ import Foundation
 
 struct Constants {
     
+    struct Host {
+        static let GooglePlace = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+        static let GooglePhoto = "https://maps.googleapis.com/maps/api/place/photo?"
+    }
+    
     struct ParameterValues {
         static let ApiKey = "AIzaSyCDjJYdmOY1XPRfJ9MBsPHkW8u4H-y-oAo"
         static let Location = "25.0330,121.5654"
         static let Radius = 1000
         static let Keyword = "ramen"
-        static let ApiHost = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+        
+        static let MaxWidth = 400
+        static let PhotoHost = "https://maps.googleapis.com/maps/api/place/photo?"
     }
     
     struct ParameterKeys {
@@ -23,5 +30,8 @@ struct Constants {
         static let Location = "location"
         static let Radius = "radius"
         static let Keyword = "keyword"
+        
+        static let MaxWidth = "maxwidth"
+        static let PhotoReference = "photo_reference"
     }
 }
