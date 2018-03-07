@@ -13,4 +13,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ramenImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
 }

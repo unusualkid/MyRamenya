@@ -87,7 +87,6 @@
 				3C032D37204BD45E00646E11 /* AppDelegate.swift */,
 				3C3CF809204C1E9100C78DF4 /* Ramenya.swift */,
 				3C3CF80B204C1F2000C78DF4 /* Constants.swift */,
-				3C032D4C204BDC1A00646E11 /* Models */,
 				3C032D4B204BDC0C00646E11 /* Controllers */,
 				3C032D3B204BD45E00646E11 /* Main.storyboard */,
 				3C032D3E204BD45E00646E11 /* Assets.xcassets */,
@@ -108,13 +107,6 @@
 				3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		3C032D4C204BDC1A00646E11 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		42E128CFA4EC22FF9EBBA9EE /* Frameworks */ = {

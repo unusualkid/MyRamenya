@@ -26,8 +26,20 @@ class AllTableViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        print("current location: \(locationManager.requestLocation())")
+        locationManager.requestLocation()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        super.viewWillAppear(animated)
+    }
+    
+    @objc func logout() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func callGooglePlaceSearch() {
         let url = Constants.Host.GooglePlace
         var param = [String:Any]()
         param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
@@ -49,7 +61,7 @@ class AllTableViewController: UIViewController {
                     let dict = result["results"] as! [[String : Any]]
                     var ramenya = Ramenya()
                     var counter = 0
-
+                    
                     for d in dict {
                         if let id = d["id"] {
                             ramenya.id = id as! String
@@ -83,29 +95,21 @@ class AllTableViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-    }
-    
-    @objc func logout() {
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 extension AllTableViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("Found user's location: \(location)")
+        if let location = locations.last {
+            print("Found user's location: \(locations)")
             Constants.ParameterValues.Location = String(location.coordinate.latitude) + "," + String(location.coordinate.longitude)
-            
             print("Constants.ParameterValues.Location: \(Constants.ParameterValues.Location)")
+            callGooglePlaceSearch()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+        callGooglePlaceSearch()
     }
 }
 
@@ -119,17 +123,20 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = ramenya.name
         cell.ratingLabel.text = "Rating: \(String(ramenya.rating))"
         
+        cell.activityIndicator.startAnimating()
+        
         let url = Constants.Host.GooglePhoto
         var param = [String:Any]()
         param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
         param[Constants.ParameterKeys.MaxWidth] = Constants.ParameterValues.MaxWidth
         param[Constants.ParameterKeys.PhotoReference] = ramenya.photoReference
-
+        
         Alamofire.request(url, parameters: param).responseImage { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
             
+            cell.activityIndicator.stopAnimating()
             switch response.result {
             case .success:
                 print("photo download success")
@@ -137,6 +144,7 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
                     print("image downloaded: \(image)")
                     cell.ramenImage.image = image
                 }
+                cell.activityIndicator.isHidden = true
             case .failure(let error):
                 print("Validation Error: \(error)")
             }
