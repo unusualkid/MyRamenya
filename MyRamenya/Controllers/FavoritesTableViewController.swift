@@ -26,13 +26,12 @@ class FavoritesTableViewController: UIViewController {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        
-        getFromFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        getFromFavorites()
     }
     
     @objc func logout() {
@@ -40,6 +39,7 @@ class FavoritesTableViewController: UIViewController {
     }
 
     func getFromFavorites(){
+        self.favorites = []
         ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? [String : [String : Any]] {
                 for (k, v) in value {
@@ -59,6 +59,7 @@ class FavoritesTableViewController: UIViewController {
 
     func removeFromFavotires(firebaseId: String){
         ref.child(favoritePath).child(firebaseId).removeValue()
+        getFromFavorites()
     }
 
 }
@@ -119,9 +120,8 @@ extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelega
             print("remove button tapped")
             
             let ramenya = self.favorites[(indexPath as NSIndexPath).row]
-//            let ramenDict = ramenya.toDictionary()
-//            print("ramenDict: \(ramenDict)")
-
+            
+            self.removeFromFavotires(firebaseId: ramenya["firebaseId"] as! String)
         }
         remove.backgroundColor = UIColor.gray
         
