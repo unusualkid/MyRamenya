@@ -37,26 +37,26 @@ class FavoritesTableViewController: UIViewController {
     @objc func logout() {
         dismiss(animated: true, completion: nil)
     }
-
-    func saveToFireBase(_ placeToSave: Any){
-        ref.child(favoritePath).childByAutoId().setValue(placeToSave)
-    }
-
-    func getFromFavorites(){
-        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary{
-                print(value)
-            }
-            //load value to some table view datasource?
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
-    func removeFromFavotires(id: String){
-        ref.child(favoritePath).child(id).removeValue()
-    }
+//
+//    func saveToFireBase(_ placeToSave: Any){
+//        ref.child(favoritePath).childByAutoId().setValue(placeToSave)
+//    }
+//
+//    func getFromFavorites(){
+//        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let value = snapshot.value as? NSDictionary{
+//                print(value)
+//            }
+//            //load value to some table view datasource?
+//            
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//    }
+//    
+//    func removeFromFavotires(id: String){
+//        ref.child(favoritePath).child(id).removeValue()
+//    }
 }
 
 extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelegate {

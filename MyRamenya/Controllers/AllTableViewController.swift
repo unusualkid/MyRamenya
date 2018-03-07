@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import CoreLocation
+import Firebase
 
 class AllTableViewController: UIViewController {
     
@@ -19,10 +20,14 @@ class AllTableViewController: UIViewController {
     var appDelegate: AppDelegate!
     var ramenyas = [Ramenya]()
     let locationManager = CLLocationManager()
+    var ref: DatabaseReference!
+    let favoritePath = Constants.FirebasePath.Favorite
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("in viewDidLoad")
+        
+        ref = Database.database().reference()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -95,6 +100,27 @@ class AllTableViewController: UIViewController {
         }
     }
     
+    
+    func saveToFireBase(_ placeId: Any){
+        ref.child(favoritePath).childByAutoId().setValue(placeId)
+    }
+    
+    func getFromFavorites(){
+        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary{
+                print(value)
+            }
+            //load value to some table view datasource?
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func removeFromFavotires(id: String){
+        ref.child(favoritePath).child(id).removeValue()
+    }
+    
 }
 
 extension AllTableViewController: CLLocationManagerDelegate {
@@ -158,7 +184,17 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
         return ramenyas.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+            let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
+            let placeId = ramenya.id
+            print("placeId: \(placeId)")
+            self.saveToFireBase(placeId)
+            
+        }
+        favorite.backgroundColor = UIColor.red
+        
+        return [favorite]
     }
 }

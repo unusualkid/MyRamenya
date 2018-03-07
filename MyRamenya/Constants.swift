@@ -34,4 +34,8 @@ struct Constants {
         static let MaxWidth = "maxwidth"
         static let PhotoReference = "photo_reference"
     }
+    
+    struct FirebasePath {
+        static let Favorite = "my_favorites"
+    }
 }
