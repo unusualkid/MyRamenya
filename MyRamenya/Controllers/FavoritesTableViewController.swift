@@ -52,9 +52,10 @@ class FavoritesTableViewController: UIViewController {
         }
     }
 
-    func removeFromFavotires(id: String){
-        ref.child(favoritePath).child(id).removeValue()
+    func removeFromFavotires(firebaseId: String){
+        ref.child(favoritePath).child(firebaseId).removeValue()
     }
+
 }
 
 extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelegate {

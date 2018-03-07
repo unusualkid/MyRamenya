@@ -23,7 +23,6 @@ class AllTableViewController: UIViewController {
     let locationManager = CLLocationManager()
     var ref: DatabaseReference!
     let favoritePath = Constants.FirebasePath.Favorite
-    var favorites = [String : Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +105,6 @@ class AllTableViewController: UIViewController {
     func saveToFireBase(_ dict: [String : Any]) {
         ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
             if let value = snapshot.value as? [String : Any] {
-//                self.favorites = value
                 var idExists = false
                 var firebaseId = ""
                 for (k, v) in value {
@@ -129,12 +127,7 @@ class AllTableViewController: UIViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }
-    
-    func removeFromFavotires(id: String){
-        ref.child(favoritePath).child(id).removeValue()
-    }
-    
+    }    
 }
 
 extension AllTableViewController: CLLocationManagerDelegate {
@@ -202,14 +195,10 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             print("favorite button tapped")
             
-//            for (key, value) in self.favorites {
-//                print("value: \(value)")
-//            }
             let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
             let ramenDict = ramenya.toDictionary()
             print("ramenDict: \(ramenDict)")
             self.saveToFireBase(ramenDict)
-            
         }
         favorite.backgroundColor = UIColor.red
         

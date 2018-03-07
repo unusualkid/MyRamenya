@@ -14,8 +14,9 @@ My Ramen is an iOS app for finding ramen parlors near the user's current locatio
 2. When first opening, the app prompts the user to access his/her location when app is in use. Click allow request.
 3. The app contains two tabs - All and My Favorites.
 4. All will show a list of ramen parlors around him/her if location information is allowed.. If location information is not allowed, he/she will see ramen parlors in Tokyo.
-5. In the All tab, users can favorite any ramen restaurant by clicking on it.
+5. In the All tab, users can favorite any ramen restaurant by swiping left all the way or swiping left and clicking favorite.
 6. After user favorites a restaurant, he/she will be able to go to the Favorites tab and see all the restaurant he/she favorited.
+7. In the Favorites tab, user can remove a restaurant by swiping left all the way or swiping left and clicking remove.
 
 ### Author
 > Kenneth Chen
