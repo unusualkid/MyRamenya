@@ -23,6 +23,7 @@ class AllTableViewController: UIViewController {
     let locationManager = CLLocationManager()
     var ref: DatabaseReference!
     let favoritePath = Constants.FirebasePath.Favorite
+    var favorites = [String : Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,18 +103,29 @@ class AllTableViewController: UIViewController {
     }
     
     
-    func saveToFireBase(_ dict: [String : Any]){
-//        ref.child(favoritePath).childByAutoId().setValue(placeId)
-        ref.child(favoritePath).childByAutoId().setValue(dict)
-    }
-    
-    func getFromFavorites(){
+    func saveToFireBase(_ dict: [String : Any]) {
         ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary{
-                print(value)
+            if let value = snapshot.value as? [String : Any] {
+//                self.favorites = value
+                var idExists = false
+                var firebaseId = ""
+                for (k, v) in value {
+                    let favorite = v as! [String : Any]
+                    print("favorite['id']: \(favorite["id"])")
+                    if dict["id"] as! String == favorite["id"] as! String {
+                        idExists = true
+                        firebaseId = k
+                    }
+                    print("idExists: \(idExists)")
+                }
+                
+                if idExists {
+                    print("self.ref.child(self.favoritePath).child(firebaseId): \(self.ref.child(self.favoritePath).child(firebaseId))")
+                    self.ref.child(self.favoritePath).child(firebaseId).setValue(dict)
+                } else {
+                    self.ref.child(self.favoritePath).childByAutoId().setValue(dict)
+                }
             }
-            //load value to some table view datasource?
-            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -189,6 +201,10 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             print("favorite button tapped")
+            
+//            for (key, value) in self.favorites {
+//                print("value: \(value)")
+//            }
             let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
             let ramenDict = ramenya.toDictionary()
             print("ramenDict: \(ramenDict)")
