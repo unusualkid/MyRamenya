@@ -16,7 +16,7 @@ class FavoritesTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var appDelegate: AppDelegate!
-    var ramenyas = [Ramenya]()
+    var favorites = [[String: Any]]()
     let url = Constants.Host.GooglePlace
     var ref: DatabaseReference!
     
@@ -41,12 +41,17 @@ class FavoritesTableViewController: UIViewController {
 
     func getFromFavorites(){
         ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let value = snapshot.value as? NSDictionary{
-                print(value)
-                
+            if let value = snapshot.value as? [String : [String : Any]] {
+                for (k, v) in value {
+                    var favorite = v
+                    print("k: \(k)")
+                    print("v: \(v)")
+                    favorite["firebaseId"] = k
+                    self.favorites.append(favorite)
+                }
+                print("self.favorites: \(self.favorites)")
+                self.tableView.reloadData()
             }
-            //load value to some table view datasource?
-            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -61,22 +66,61 @@ class FavoritesTableViewController: UIViewController {
 extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let favorite = favorites[(indexPath as NSIndexPath).row]
+        
         let cellReuseIdentifier = "TableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableViewCell
+        cell.nameLabel.text = favorite["name"] as! String
+        
+        var ratingString = ""
+        if let rating = favorite["rating"] {
+            ratingString = String(describing: rating)
+        }
+        
+        cell.ratingLabel.text = "Rating: \(ratingString)"
+        
+        cell.activityIndicator.startAnimating()
+        
+        let url = Constants.Host.GooglePhoto
+        var param = [String:Any]()
+        param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
+        param[Constants.ParameterKeys.MaxWidth] = Constants.ParameterValues.MaxWidth
+        param[Constants.ParameterKeys.PhotoReference] = favorite["photoReference"]
+        
+        Alamofire.request(url, parameters: param).responseImage { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            cell.activityIndicator.stopAnimating()
+            switch response.result {
+            case .success:
+                print("photo download success")
+                if let image = response.result.value {
+                    print("image downloaded: \(image)")
+                    cell.ramenImage.image = image
+                }
+                cell.activityIndicator.isHidden = true
+            case .failure(let error):
+                print("Validation Error: \(error)")
+            }
+            
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return favorites.count
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
-            print("favorite button tapped")
+            print("remove button tapped")
             
-            let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
-            let ramenDict = ramenya.toDictionary()
-            print("ramenDict: \(ramenDict)")
+            let ramenya = self.favorites[(indexPath as NSIndexPath).row]
+//            let ramenDict = ramenya.toDictionary()
+//            print("ramenDict: \(ramenDict)")
 
         }
         remove.backgroundColor = UIColor.gray

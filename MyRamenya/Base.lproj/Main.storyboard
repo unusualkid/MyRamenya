@@ -299,6 +299,9 @@
                         <viewLayoutGuide key="safeArea" id="RDd-sX-JDM"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Favorites" id="zek-KT-imc"/>
+                    <connections>
+                        <outlet property="tableView" destination="P7X-lV-cqg" id="Ng3-JR-PE9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbr-h7-dQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
