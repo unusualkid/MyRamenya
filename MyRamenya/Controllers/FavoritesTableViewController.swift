@@ -62,15 +62,25 @@ extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellReuseIdentifier = "TableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableViewCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ramenyas.count
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let remove = UITableViewRowAction(style: .normal, title: "Remove") { action, index in
+            print("favorite button tapped")
+            
+            let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
+            let ramenDict = ramenya.toDictionary()
+            print("ramenDict: \(ramenDict)")
+
+        }
+        remove.backgroundColor = UIColor.gray
         
+        return [remove]
     }
 }
