@@ -43,8 +43,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
         case .failed(let error):
             print(error)
             activityIndicator.stopAnimating()
+            Utility.displayAlert(errorString: "Not connected to internet. Restart the app and try again.", viewController: self)
         case .cancelled:
             print("User cancelled login.")
+            Utility.displayAlert(errorString: "User cancelled login.", viewController: self)
             activityIndicator.stopAnimating()
         case .success(let grantedPermissions, let declinedPermissions, let accessToken):
             loginButton.isUserInteractionEnabled = false

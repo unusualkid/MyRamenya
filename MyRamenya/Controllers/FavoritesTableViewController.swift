@@ -41,6 +41,7 @@ class FavoritesTableViewController: UIViewController {
     func getFromFavorites(){
         self.favorites = []
         ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
+            print("snapshot: \(snapshot)")
             if let value = snapshot.value as? [String : [String : Any]] {
                 for (k, v) in value {
                     var favorite = v
@@ -51,10 +52,11 @@ class FavoritesTableViewController: UIViewController {
                 }
                 print("self.favorites: \(self.favorites)")
                 self.tableView.reloadData()
+            } else {
+                Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
+                print("error retrieving data.")
             }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        })
     }
 
     func removeFromFavotires(firebaseId: String){
@@ -104,6 +106,7 @@ extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelega
                 cell.activityIndicator.isHidden = true
             case .failure(let error):
                 print("Validation Error: \(error)")
+                Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
             }
             
         }

@@ -19,6 +19,7 @@
 		3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF809204C1E9100C78DF4 /* Ramenya.swift */; };
 		3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF80B204C1F2000C78DF4 /* Constants.swift */; };
 		3CA14D8E204FBCBA0092EE89 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA14D8D204FBCBA0092EE89 /* Serializable.swift */; };
+		3CA14D90204FE2750092EE89 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA14D8F204FE2750092EE89 /* Utility.swift */; };
 		3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */; };
 		96011BEB2E7C2B97AF958AE9 /* Pods_MyRamenya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		3C3CF809204C1E9100C78DF4 /* Ramenya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramenya.swift; sourceTree = "<group>"; };
 		3C3CF80B204C1F2000C78DF4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3CA14D8D204FBCBA0092EE89 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		3CA14D8F204FE2750092EE89 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		571CB42B9883D4EA75B5F2DE /* Pods-MyRamenya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRamenya.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya.release.xcconfig"; sourceTree = "<group>"; };
 		FE7F2437F9AA54617C849B82 /* Pods_MyRamenya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRamenya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,15 +89,13 @@
 			isa = PBXGroup;
 			children = (
 				3C032D37204BD45E00646E11 /* AppDelegate.swift */,
-				3C3CF809204C1E9100C78DF4 /* Ramenya.swift */,
-				3C3CF80B204C1F2000C78DF4 /* Constants.swift */,
+				3CA14D91204FE2A60092EE89 /* Misc */,
 				3C032D4B204BDC0C00646E11 /* Controllers */,
 				3C032D3B204BD45E00646E11 /* Main.storyboard */,
 				3C032D3E204BD45E00646E11 /* Assets.xcassets */,
 				3C032D40204BD45E00646E11 /* LaunchScreen.storyboard */,
 				3C032D43204BD45E00646E11 /* Info.plist */,
 				3C3CF803204BE7A900C78DF4 /* GoogleService-Info.plist */,
-				3CA14D8D204FBCBA0092EE89 /* Serializable.swift */,
 			);
 			path = MyRamenya;
 			sourceTree = "<group>";
@@ -110,6 +110,17 @@
 				3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3CA14D91204FE2A60092EE89 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				3CA14D8D204FBCBA0092EE89 /* Serializable.swift */,
+				3C3CF809204C1E9100C78DF4 /* Ramenya.swift */,
+				3C3CF80B204C1F2000C78DF4 /* Constants.swift */,
+				3CA14D8F204FE2750092EE89 /* Utility.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		42E128CFA4EC22FF9EBBA9EE /* Frameworks */ = {
@@ -286,6 +297,7 @@
 				3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */,
 				3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */,
 				3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */,
+				3CA14D90204FE2750092EE89 /* Utility.swift in Sources */,
 				3C3CF806204C1D8C00C78DF4 /* FavoritesTableViewController.swift in Sources */,
 				3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */,
 			);

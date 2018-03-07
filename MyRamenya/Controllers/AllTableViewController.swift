@@ -26,18 +26,14 @@ class AllTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("in viewDidLoad")
         
         ref = Database.database().reference()
-        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
     }
     
@@ -96,6 +92,7 @@ class AllTableViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
+                Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
                 print("Validation Error: \(error)")
             }
         }
@@ -125,6 +122,7 @@ class AllTableViewController: UIViewController {
                 }
             }
         }) { (error) in
+            Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
             print(error.localizedDescription)
         }
     }    
@@ -179,6 +177,7 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 cell.activityIndicator.isHidden = true
             case .failure(let error):
+                Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
                 print("Validation Error: \(error)")
             }
 
