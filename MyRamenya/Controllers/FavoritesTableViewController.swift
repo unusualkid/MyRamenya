@@ -18,41 +18,15 @@ class FavoritesTableViewController: UIViewController {
     var appDelegate: AppDelegate!
     var ramenyas = [Ramenya]()
     let url = Constants.Host.GooglePlace
-//    var ref = Database.database().reference()
+    var ref: DatabaseReference!
+    
     let favoritePath = "my_favorites"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var param = [String:Any]()
-        param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
-        
-        Alamofire.request(url, method: .get, parameters: param).responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                if let json = response.result.value {
-                    print("json: \(json)")
-                    let result = json as! [String : Any]
-                    let dict = result["data"] as! [String : Any]
-                    var event = [String : Any]()
-                    
-                    for (key, value) in dict {
-                        event = value as! [String : Any]
-                        event["id"] = key
-//                        self.events.append(event)
-                    }
-//                    print("self.events: \(self.events)")
-//                    self.tableView.reloadData()
-                }
-            case .failure(let error):
-                print("Validation Error: \(error)")
-            }
-        }
+        ref = Database.database().reference()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,25 +38,25 @@ class FavoritesTableViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-//    func saveToFireBase(_ placeToSave: Any){
-//        ref.child(favoritePath).childByAutoId().setValue(placeToSave)
-//    }
-//    
-//    func getFromFavorites(){
-//        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let value = snapshot.value as? NSDictionary{
-//                print(value)
-//            }
-//            //load value to some table view datasource?
-//            
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//    }
-//    
-//    func removeFromFavotires(id: String){
-//        ref.child(favoritePath).child(id).removeValue()
-//    }
+    func saveToFireBase(_ placeToSave: Any){
+        ref.child(favoritePath).childByAutoId().setValue(placeToSave)
+    }
+
+    func getFromFavorites(){
+        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary{
+                print(value)
+            }
+            //load value to some table view datasource?
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func removeFromFavotires(id: String){
+        ref.child(favoritePath).child(id).removeValue()
+    }
 }
 
 extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelegate {
