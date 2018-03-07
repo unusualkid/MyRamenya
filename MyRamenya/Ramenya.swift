@@ -17,3 +17,23 @@ struct Ramenya {
     var photoReference = ""
 }
 
+extension Ramenya : Serializable {
+    var properties: Array<String> {
+        return ["name", "id", "rating", "photoReference"]
+    }
+    
+    func valueForKey(key: String) -> Any? {
+        switch key {
+        case "name":
+            return name
+        case "id":
+            return id
+        case "rating":
+            return rating
+        case "photoReference":
+            return photoReference
+        default:
+            return nil
+        }
+    }
+}

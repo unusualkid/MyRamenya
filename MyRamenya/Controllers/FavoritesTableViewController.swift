@@ -20,13 +20,14 @@ class FavoritesTableViewController: UIViewController {
     let url = Constants.Host.GooglePlace
     var ref: DatabaseReference!
     
-    let favoritePath = "my_favorites"
+    let favoritePath = Constants.FirebasePath.Favorite
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-
+        
+        getFromFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,26 +38,23 @@ class FavoritesTableViewController: UIViewController {
     @objc func logout() {
         dismiss(animated: true, completion: nil)
     }
-//
-//    func saveToFireBase(_ placeToSave: Any){
-//        ref.child(favoritePath).childByAutoId().setValue(placeToSave)
-//    }
-//
-//    func getFromFavorites(){
-//        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let value = snapshot.value as? NSDictionary{
-//                print(value)
-//            }
-//            //load value to some table view datasource?
-//            
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//    }
-//    
-//    func removeFromFavotires(id: String){
-//        ref.child(favoritePath).child(id).removeValue()
-//    }
+
+    func getFromFavorites(){
+        ref.child(favoritePath).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let value = snapshot.value as? NSDictionary{
+                print(value)
+                
+            }
+            //load value to some table view datasource?
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+
+    func removeFromFavotires(id: String){
+        ref.child(favoritePath).child(id).removeValue()
+    }
 }
 
 extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelegate {

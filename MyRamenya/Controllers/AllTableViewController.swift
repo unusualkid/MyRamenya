@@ -13,6 +13,7 @@ import AlamofireImage
 import CoreLocation
 import Firebase
 
+
 class AllTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -101,8 +102,9 @@ class AllTableViewController: UIViewController {
     }
     
     
-    func saveToFireBase(_ placeId: Any){
-        ref.child(favoritePath).childByAutoId().setValue(placeId)
+    func saveToFireBase(_ dict: [String : Any]){
+//        ref.child(favoritePath).childByAutoId().setValue(placeId)
+        ref.child(favoritePath).childByAutoId().setValue(dict)
     }
     
     func getFromFavorites(){
@@ -188,9 +190,9 @@ extension AllTableViewController: UITableViewDataSource, UITableViewDelegate {
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             print("favorite button tapped")
             let ramenya = self.ramenyas[(indexPath as NSIndexPath).row]
-            let placeId = ramenya.id
-            print("placeId: \(placeId)")
-            self.saveToFireBase(placeId)
+            let ramenDict = ramenya.toDictionary()
+            print("ramenDict: \(ramenDict)")
+            self.saveToFireBase(ramenDict)
             
         }
         favorite.backgroundColor = UIColor.red
