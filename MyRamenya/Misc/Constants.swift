@@ -17,7 +17,8 @@ struct Constants {
     
     struct ParameterValues {
         static let ApiKey = "AIzaSyCDjJYdmOY1XPRfJ9MBsPHkW8u4H-y-oAo"
-        static var Location = "35.6895,139.6917"
+        static var LocationTokyo = "35.6895,139.6917"
+        static var LocationCurrent = ""
         static let Radius = 1000
         static let Keyword = "ramen"
         

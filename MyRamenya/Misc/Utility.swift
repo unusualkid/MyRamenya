@@ -11,7 +11,7 @@ import UIKit
 
 class Utility {
     static func displayAlert(errorString: String?, viewController: UIViewController) {
-        let controller = UIAlertController()
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         
         if let errorString = errorString {
             controller.message = errorString

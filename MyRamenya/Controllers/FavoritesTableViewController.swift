@@ -84,31 +84,16 @@ extension FavoritesTableViewController: UITableViewDataSource, UITableViewDelega
         
         cell.activityIndicator.startAnimating()
         
-        let url = Constants.Host.GooglePhoto
-        var param = [String:Any]()
-        param[Constants.ParameterKeys.ApiKey] = Constants.ParameterValues.ApiKey
-        param[Constants.ParameterKeys.MaxWidth] = Constants.ParameterValues.MaxWidth
-        param[Constants.ParameterKeys.PhotoReference] = favorite["photoReference"]
-        
-        Alamofire.request(url, parameters: param).responseImage { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
+        GooglePlacesAPI.sharedInstance.getPhotos(photoReference: favorite["photoReference"] as! String) { (image, error) in
             cell.activityIndicator.stopAnimating()
-            switch response.result {
-            case .success:
-                print("photo download success")
-                if let image = response.result.value {
-                    print("image downloaded: \(image)")
-                    cell.ramenImage.image = image
-                }
-                cell.activityIndicator.isHidden = true
-            case .failure(let error):
-                print("Validation Error: \(error)")
-                Utility.displayAlert(errorString: "Not connected to internet. Try again.", viewController: self)
-            }
             
+            if let image = image {
+                cell.ramenImage.image = image
+                cell.activityIndicator.isHidden = true
+            } else {
+                Utility.displayAlert(errorString: "Cannot download pics. Check your internet.", viewController: self)
+                print("Validation Error: \(error?.localizedDescription)")
+            }
         }
         
         return cell

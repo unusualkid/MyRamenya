@@ -18,6 +18,7 @@
 		3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */; };
 		3C3CF80A204C1E9100C78DF4 /* Ramenya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF809204C1E9100C78DF4 /* Ramenya.swift */; };
 		3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3CF80B204C1F2000C78DF4 /* Constants.swift */; };
+		3C5CD9DD2050D465001B44A8 /* GooglePlacesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9DC2050D465001B44A8 /* GooglePlacesAPI.swift */; };
 		3CA14D8E204FBCBA0092EE89 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA14D8D204FBCBA0092EE89 /* Serializable.swift */; };
 		3CA14D90204FE2750092EE89 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA14D8F204FE2750092EE89 /* Utility.swift */; };
 		3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
 		3C3CF809204C1E9100C78DF4 /* Ramenya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramenya.swift; sourceTree = "<group>"; };
 		3C3CF80B204C1F2000C78DF4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3C5CD9DC2050D465001B44A8 /* GooglePlacesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesAPI.swift; sourceTree = "<group>"; };
 		3CA14D8D204FBCBA0092EE89 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		3CA14D8F204FE2750092EE89 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				3C032D37204BD45E00646E11 /* AppDelegate.swift */,
+				3C5CD9DB2050D3C7001B44A8 /* Networking */,
 				3CA14D91204FE2A60092EE89 /* Misc */,
 				3C032D4B204BDC0C00646E11 /* Controllers */,
 				3C032D3B204BD45E00646E11 /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				3CBDA7EE204EA7B500FE61A2 /* TableViewCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3C5CD9DB2050D3C7001B44A8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CD9DC2050D465001B44A8 /* GooglePlacesAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		3CA14D91204FE2A60092EE89 /* Misc */ = {
@@ -291,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C3CF808204C1D9B00C78DF4 /* AllTableViewController.swift in Sources */,
+				3C5CD9DD2050D465001B44A8 /* GooglePlacesAPI.swift in Sources */,
 				3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */,
 				3C032D4A204BD8F500646E11 /* LoginViewController.swift in Sources */,
 				3CA14D8E204FBCBA0092EE89 /* Serializable.swift in Sources */,
