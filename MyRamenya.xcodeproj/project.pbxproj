@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D37204BD45E00646E11 /* AppDelegate.swift */; };
-		3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C032D39204BD45E00646E11 /* CityViewController.swift */; };
 		3C032D3D204BD45E00646E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D3B204BD45E00646E11 /* Main.storyboard */; };
 		3C032D3F204BD45E00646E11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D3E204BD45E00646E11 /* Assets.xcassets */; };
 		3C032D42204BD45E00646E11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C032D40204BD45E00646E11 /* LaunchScreen.storyboard */; };
@@ -29,7 +28,6 @@
 		1EA5CC923A022B62F0919FE2 /* Pods-MyRamenya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRamenya.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyRamenya/Pods-MyRamenya.debug.xcconfig"; sourceTree = "<group>"; };
 		3C032D34204BD45E00646E11 /* MyRamenya.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRamenya.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C032D37204BD45E00646E11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C032D39204BD45E00646E11 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		3C032D3C204BD45E00646E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C032D3E204BD45E00646E11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C032D41204BD45E00646E11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		3C032D4B204BDC0C00646E11 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3C032D39204BD45E00646E11 /* CityViewController.swift */,
 				3C032D49204BD8F500646E11 /* LoginViewController.swift */,
 				3C3CF807204C1D9B00C78DF4 /* AllTableViewController.swift */,
 				3C3CF805204C1D8C00C78DF4 /* FavoritesTableViewController.swift */,
@@ -306,7 +303,6 @@
 				3CBDA7EF204EA7B500FE61A2 /* TableViewCell.swift in Sources */,
 				3C032D4A204BD8F500646E11 /* LoginViewController.swift in Sources */,
 				3CA14D8E204FBCBA0092EE89 /* Serializable.swift in Sources */,
-				3C032D3A204BD45E00646E11 /* CityViewController.swift in Sources */,
 				3C032D38204BD45E00646E11 /* AppDelegate.swift in Sources */,
 				3C3CF80C204C1F2000C78DF4 /* Constants.swift in Sources */,
 				3CA14D90204FE2750092EE89 /* Utility.swift in Sources */,
